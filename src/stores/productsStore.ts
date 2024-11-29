@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 export const useProductsStore = defineStore('productsStore', {
   state: () => ({
@@ -8,7 +8,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Wireless Mouse',
         price: 29.99,
         currency: 'USD',
-        imageUrl: '/images/mouse.webp',
+        imageUrl: `${import.meta.env.BASE_URL}images/mouse.webp`,
         quantity: 1,
         displayed: true,
       },
@@ -17,7 +17,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Gaming Keyboard',
         price: 79.99,
         currency: 'USD',
-        imageUrl: '/images/gaming keyboard.webp',
+        imageUrl: `${import.meta.env.BASE_URL}images/gaming keyboard.webp`,
         quantity: 2,
         displayed: true,
       },
@@ -26,7 +26,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Bluetooth Headphones',
         price: 49.99,
         currency: 'USD',
-        imageUrl: '/images/bluetooth headphones.jpg',
+        imageUrl: `${import.meta.env.BASE_URL}images/bluetooth headphones.jpg`,
         quantity: 1,
         displayed: true,
       },
@@ -35,7 +35,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'USB-C Hub',
         price: 29.99,
         currency: 'USD',
-        imageUrl: '/images/usb-c hub.jpg',
+        imageUrl: `${import.meta.env.BASE_URL}images/usb-c hub.jpg`,
         quantity: 1,
         displayed: true,
       },
@@ -44,7 +44,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Bluetooth Speaker',
         price: 59.99,
         currency: 'USD',
-        imageUrl: '/images/bluetooth speaker.webp',
+        imageUrl: `${import.meta.env.BASE_URL}images/bluetooth speaker.webp`,
         quantity: 1,
         displayed: true,
       },
@@ -53,7 +53,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Webcam',
         price: 39.99,
         currency: 'USD',
-        imageUrl: '/images/webcam.jpg',
+        imageUrl: `${import.meta.env.BASE_URL}images/webcam.jpg`,
         quantity: 1,
         displayed: true,
       },
@@ -62,7 +62,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'External Hard Drive',
         price: 89.99,
         currency: 'USD',
-        imageUrl: '/images/external hard drive.webp',
+        imageUrl: `${import.meta.env.BASE_URL}images/external hard drive.webp`,
         quantity: 1,
         displayed: true,
       },
@@ -71,7 +71,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Wireless Charger',
         price: 19.99,
         currency: 'USD',
-        imageUrl: '/images/wireless charger.jpg',
+        imageUrl: `${import.meta.env.BASE_URL}images/wireless charger.jpg`,
         quantity: 1,
         displayed: true,
       },
@@ -80,7 +80,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Smartwatch',
         price: 149.99,
         currency: 'USD',
-        imageUrl: '/images/smartwatch.jpg',
+        imageUrl: `${import.meta.env.BASE_URL}images/smartwatch.jpg`,
         quantity: 1,
         displayed: true,
       },
@@ -89,7 +89,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Fitness Tracker',
         price: 99.99,
         currency: 'USD',
-        imageUrl: '/images/fitness tracker.jpg',
+        imageUrl: `${import.meta.env.BASE_URL}images/fitness tracker.jpg`,
         quantity: 1,
         displayed: true,
       },
@@ -98,7 +98,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Noise Cancelling Headphones',
         price: 129.99,
         currency: 'USD',
-        imageUrl: '/images/noise cancelling headphones.jpg',
+        imageUrl: `${import.meta.env.BASE_URL}images/noise cancelling headphones.jpg`,
         quantity: 1,
         displayed: true,
       },
@@ -107,7 +107,7 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Apple Watch',
         price: 399.99,
         currency: 'USD',
-        imageUrl: '/images/apple watch.jpg',
+        imageUrl: `${import.meta.env.BASE_URL}images/apple watch.jpg`,
         quantity: 1,
         displayed: true,
       },
@@ -116,10 +116,10 @@ export const useProductsStore = defineStore('productsStore', {
         name: 'Samsung 8K TV',
         price: 2999.99,
         currency: 'USD',
-        imageUrl: '/images/samsung tv.webp',
+        imageUrl: `${import.meta.env.BASE_URL}images/samsung tv.webp`,
         quantity: 1,
         displayed: true,
-      }
+      },
     ],
     isCustomWidgetEnabled: true,
     itemsPerRow: 5,
@@ -128,38 +128,38 @@ export const useProductsStore = defineStore('productsStore', {
 
   actions: {
     toggleCustomWidget() {
-      this.isCustomWidgetEnabled = !this.isCustomWidgetEnabled;
+      this.isCustomWidgetEnabled = !this.isCustomWidgetEnabled
     },
 
     toggleProductDisplayed(productId: number) {
-      const item = this.products.find(item => item.id === productId);
+      const item = this.products.find((item) => item.id === productId)
       if (item) {
-        item.displayed = !item.displayed;
+        item.displayed = !item.displayed
       }
     },
 
     setItemsPerRow(count: number) {
-      this.itemsPerRow = count;
+      this.itemsPerRow = count
     },
 
     increaseQuantity(productId: number) {
-      const item = this.products.find(item => item.id === productId);
+      const item = this.products.find((item) => item.id === productId)
       if (item) {
-        item.quantity++;
+        item.quantity++
       }
     },
 
     decreaseQuantity(productId: number) {
-      const item = this.products.find(item => item.id === productId);
+      const item = this.products.find((item) => item.id === productId)
       if (item && item.quantity > 1) {
-        item.quantity--;
+        item.quantity--
       }
     },
 
     removeFromCart(productId: number) {
-      const index = this.products.findIndex(item => item.id === productId);
+      const index = this.products.findIndex((item) => item.id === productId)
       if (index !== -1) {
-        this.products.splice(index, 1);
+        this.products.splice(index, 1)
       }
     },
 
@@ -169,21 +169,21 @@ export const useProductsStore = defineStore('productsStore', {
 
     addProductToSelection(productId: number) {
       if (!this.selectedProducts.includes(productId)) {
-        this.selectedProducts.push(productId);
+        this.selectedProducts.push(productId)
       }
     },
 
     removeProductFromSelection(productId: number) {
-      this.selectedProducts = this.selectedProducts.filter(id => id !== productId);
-    }
+      this.selectedProducts = this.selectedProducts.filter((id) => id !== productId)
+    },
   },
 
   getters: {
     totalCost: (state) => {
-      return state.products.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2);
+      return state.products.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)
     },
     getProductById: (state) => {
-      return (id: number) => state.products.find(item => item.id === id);
+      return (id: number) => state.products.find((item) => item.id === id)
     },
   },
-});
+})
