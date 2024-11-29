@@ -1,39 +1,58 @@
-# widget
+# Ecwid Custom Widget Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a custom widget for the Ecwid online store. It includes:
 
-## Recommended IDE Setup
+- A **Recently Updated Products Widget** displayed on the cart page.
+- A **Settings Page** where store owners can enable/disable the widget and configure its display.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+The frontend is built using **Vue.js 3** with the Composition API and uses the Ecwid CSS Framework for styling. The application runs in a Docker container.
 
-## Type Support for `.vue` Imports in TS
+---
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## **Features**
 
-## Customize configuration
+### Recently Updated Products Widget
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Displays recently updated products below the cart page (mocked data due to lack of backend/API integration).
+- Includes:
+  - Add-to-cart buttons (not functional due to missing API).
+  - Links to product details (mocked).
 
-## Project Setup
+### Settings Page
 
-```sh
-npm install
-```
+- Toggle the widget on/off.
+- Adjust the number of products displayed.
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-npm run dev
-```
+## **Technologies Used**
 
-### Type-Check, Compile and Minify for Production
+- **Frontend**: Vue.js 3, TypeScript, HTML/CSS.
+- **Containerization**: Docker Compose.
 
-```sh
-npm run build
-```
+---
 
-### Lint with [ESLint](https://eslint.org/)
+## **Getting Started**
 
-```sh
-npm run lint
-```
+### Prerequisites
+
+- Docker and Docker Compose installed on your machine.
+
+### Installation Steps
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+
+   ```
+
+2. **Build and Run the Docker Compose Stack**:
+
+   ```bash
+   docker compose up -d
+   ```
+
+3. **Access the Application**:
+   Open your web browser and navigate to: `http://localhost:8080`.
